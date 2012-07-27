@@ -43,6 +43,9 @@ class local_chatlogs_converations_table extends table_sql {
     public function __construct($uniqueid) {
         parent::__construct($uniqueid);
         $this->set_attribute('class', 'devchatslist generaltable generalbox');
+        if (!isset($this->sql)) {
+            $this->sql = new stdClass();
+        }
         $this->sql->fields = 'conversationid, messagecount, timestart, timeend, (timestart - timeend) AS duration';
         $this->sql->from = '{local_chatlogs_conversations}';
         $this->sql->where = 'messagecount > 0';
@@ -69,7 +72,7 @@ class local_chatlogs_converations_table extends table_sql {
                 FROM {local_chatlogs_messages} m
                 JOIN {local_chatlogs_participants} p
                     ON m.fromemail = p.fromemail
-                WHERE m.conversationid = ? GROUP BY p.nickname';
+                WHERE m.conversationid = ? GROUP BY p.fromemail, p.nickname';
         $participants = $DB->get_records_sql_menu($sql, array($row->conversationid));
         $participants = implode(', ', $participants);
 
@@ -367,6 +370,10 @@ class local_chatlogs_search_table extends table_sql {
 
         $this->searchterm = $searchterm;
         $this->set_attribute('class', 'devchat');
+
+        if (!isset($this->sql)) {
+            $this->sql = new stdClass();
+        }
 
         $this->sql->fields = 'm.id AS messageid, m.fromemail, m.fromplace, m.timesent,
                               m.message, m.conversationid, p.nickname,
