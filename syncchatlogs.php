@@ -129,26 +129,5 @@ if (!isset($ismoodlebot)) {
     echo "Synchronised chat logs ($count new messages) - URL: http://moodle.org/local/chatlogs/index.php?conversationid=".$conversationid."\n";
 }
 
-// Clean up orphan conversations
-
-$firstone = true;
-$pushtonext = 0;
-
-if ($conversations = $DB->get_records('local_chatlogs_conversations', null, 'conversationid desc')) {
-
-    foreach ($conversations as $conversation) {
-
-        if ($pushtonext) {  // Copy those to this
-            $DB->execute("UPDATE {local_chatlogs_messages} SET conversationid = $conversation->conversationid WHERE conversationid = ?", array($pushtonext));
-            $DB->execute("UPDATE {local_chatlogs_conversations} SET messagecount = 0 WHERE conversationid = ?", array($pushtonext));
-            $pushtonext = 0;
-        }
-
-        if (!$firstone && $conversation->messagecount == 1) {
-            $pushtonext = $conversation->conversationid;
-        }
-
-        $firstone = false;
-    }
-
-}
+// Clean up orphan conversations.
+local_chatlogs_group_orphans();
