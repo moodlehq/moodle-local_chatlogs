@@ -28,7 +28,7 @@ require(__DIR__.'/../../config.php');
 // Only php cli allowed.
 if (isset($_SERVER['REMOTE_ADDR'])) {
     if ($_SERVER['REMOTE_ADDR'] != "174.123.154.58") {
-        print_error('cronerrorclionly', 'admin');
+        throw new moodle_exception('cronerrorclionly', 'admin');
         exit;
     } else {
         $ismoodlebot = true;

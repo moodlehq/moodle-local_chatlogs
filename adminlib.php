@@ -15,16 +15,6 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Admin tree class for lazyloading config box
- *
- * @package     local_chatlogs
- * @copyright   2012 Dan Poltawski <dan@moodle.com>
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-defined('MOODLE_INTERNAL') || die();
-
-/**
  * admin_setting_configselect for the seleted cohort, so we can lazy-load the choices.
  *
  * @package   local_chatlogs

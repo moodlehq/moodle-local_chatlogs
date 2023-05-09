@@ -52,7 +52,7 @@ list($options, $unrecognized) = cli_get_params(
     )
 );
 
-if (!empty($options['help']) or count($unrecognized) <> 1) {
+if (!empty($options['help']) || count($unrecognized) <> 1) {
     cli_error($usage);
 }
 

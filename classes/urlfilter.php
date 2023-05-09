@@ -35,6 +35,7 @@ require_once($CFG->dirroot.'/filter/urltolink/filter.php');
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class urlfilter extends \filter_urltolink {
+
     /**
      * Create a new instance
      */
@@ -48,7 +49,7 @@ class urlfilter extends \filter_urltolink {
      *
      * @param string $text The text which URLs have to be converted to working links. By reference.
      */
-    public function convert_urls_into_links(&$text) {
+    public function convert_urls_into_links(&$text) { // phpcs:ignore Generic.CodeAnalysis.UselessOverridingMethod.Found
         parent::convert_urls_into_links($text);
     }
 }

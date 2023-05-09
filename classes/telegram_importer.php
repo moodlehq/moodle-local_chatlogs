@@ -190,8 +190,8 @@ class telegram_importer {
         // the timestamp stored with microseconds precision, which is important
         // for ensuring that we don't retrieve the same chat message twice.
         // $message->timestamp - traditional Moodle timestamp (Seconds since the Unix Epoch)
-        // $message->timejava - microseconds since unix epoch (so that we can later)
-        $d = new \DateTime($input->timestamp); // Input is ISO-8601 formated timestamp
+        // $message->timejava - microseconds since unix epoch (so that we can later).
+        $d = new \DateTime($input->timestamp); // Input is ISO-8601 formated timestamp.
         $timestamp = $d->format('U'); // Time since epoch.
         $miliseconds = $d->format('u') / 1000; // If php7 we could use ->format('v').
         $milisecondepoch = floor(($timestamp * 1000) + $miliseconds);

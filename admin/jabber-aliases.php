@@ -45,7 +45,7 @@ if ($data = data_submitted()) {
     if (!empty($userid)) {
         $status = link_jabberid_to_user($jabberid, $userid);
         if ($status === false) {
-            print_error('failed');
+            throw new moodle_exception('failed');
         }
     }
     redirect($PAGE->url);
@@ -105,7 +105,7 @@ echo $OUTPUT->footer();
 function link_jabberid_to_user($jabberid, $userid) {
     global $DB;
 
-    if (is_null($userid) or is_null($jabberid)) {
+    if (is_null($userid) || is_null($jabberid)) {
         throw new coding_exception('NULL parameter values not allowed here');
     }
 

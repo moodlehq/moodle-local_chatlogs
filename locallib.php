@@ -509,7 +509,7 @@ class local_chatlogs_search_table extends table_sql {
  */
 function  local_chatlogs_require_capability() {
     if (!local_chatlogs_can_access()) {
-        print_error('nopermissions', 'error', '',  get_string('viewchatlogs', 'local_chatlogs'));
+        throw new moodle_exception('nopermissions', 'error', '',  get_string('viewchatlogs', 'local_chatlogs'));
         die;
     }
 }

@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-
 /**
  * Telegram importer tests.
  *
@@ -22,6 +21,8 @@
  * @copyright 2017 Dan Poltawski
  * @license https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+namespace local_chatlogs;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -33,8 +34,9 @@ global $CFG;
  * @package local_chatlogs
  * @copyright 2017 Dan Poltawski
  * @license https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @covers \local_chatlogs_testable_telegram_importer
  */
-class local_chatlogs_telegram_importer_test extends advanced_testcase {
+class telegram_importer_test extends \advanced_testcase {
 
     public function test_import_when_empty() {
         $this->resetAfterTest();
@@ -50,7 +52,7 @@ class local_chatlogs_telegram_importer_test extends advanced_testcase {
         $importer = new local_chatlogs_testable_telegram_importer();
         $importer->set_mock_response('{sdfs:sdf');
 
-        $this->expectException(moodle_exception::class);
+        $this->expectException(\moodle_exception::class);
         $importer->import();
     }
 
@@ -191,7 +193,7 @@ class local_chatlogs_telegram_importer_test extends advanced_testcase {
  * @copyright 2017 Dan Poltawski
  * @license https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_chatlogs_testable_telegram_importer extends local_chatlogs\telegram_importer {
+class local_chatlogs_testable_telegram_importer extends telegram_importer {
     /** @var string|array mock response */
     private $mockresponse = null;
 
@@ -215,9 +217,9 @@ class local_chatlogs_testable_telegram_importer extends local_chatlogs\telegram_
 
         // Simulate server-side filtering of timestamp.
         if ($timestamp = $url->param('aftertimestamp')) {
-            $afterdate = new DateTime($timestamp);
+            $afterdate = new \DateTime($timestamp);
             $resp = array_filter($this->mockresponse, function ($row) use($afterdate) {
-                return new DateTime($row->timestamp) > $afterdate;
+                return new \DateTime($row->timestamp) > $afterdate;
             });
             return json_encode(array_values($resp));
         }

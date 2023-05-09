@@ -22,7 +22,6 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 namespace local_chatlogs\task;
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * A scheduled task for syning chatlogs from the remote api.
