@@ -3,7 +3,7 @@
  * Shamelessly stolen from the dev plugin by Dan
  *
  * @author  David Mudrak <david@moodle.com>
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 YUI.add('moodle-local_chatlogs-jabberaliases', function(Y) {
 

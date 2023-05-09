@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,14 +12,14 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Provides library functions used by plugin
  *
  * @package     local_chatlogs
  * @copyright   2012 Dan Poltawski <dan@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -31,7 +31,7 @@ require_once($CFG->dirroot.'/local/chatlogs/lib.php');
  * Table listing jabber conversations
  *
  * @copyright   2012 Dan Poltawski <dan@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_chatlogs_converations_table extends table_sql {
 
@@ -152,7 +152,7 @@ class local_chatlogs_converations_table extends table_sql {
  * A jabber conversation
  *
  * @copyright   2012 Dan Poltawski <dan@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_chatlogs_conversation {
     /** @var object From from the chatlogs_conversations table */
@@ -366,7 +366,7 @@ class local_chatlogs_conversation {
  * Table listing chat search results
  *
  * @copyright   2012 Dan Poltawski <dan@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_chatlogs_search_table extends table_sql {
     /**
