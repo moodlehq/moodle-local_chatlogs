@@ -3,7 +3,7 @@
  * between chats.
  *
  * @author  Dan Poltawski <dan@moodle.com>
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 YUI.add('moodle-local_chatlogs-keyboard', function(Y) {
 

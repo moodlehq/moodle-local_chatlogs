@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,24 +12,14 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Admin tree class for lazyloading config box
+ * admin_setting_configselect for the seleted cohort, so we can lazy-load the choices.
  *
- * @package     local_chatlogs
- * @copyright   2012 Dan Poltawski <dan@moodle.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-defined('MOODLE_INTERNAL') || die();
-
-/**
- * admin_setting_configselect for the seleted cohort
- * simply so we can lazy-load the choices.
- *
+ * @package   local_chatlogs
  * @copyright Dan Poltawski <dan@moodle.com>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_chatlogs_cohort_selector extends admin_setting_configselect {
 
