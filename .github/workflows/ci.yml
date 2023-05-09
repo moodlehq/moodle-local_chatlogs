@@ -68,12 +68,11 @@ jobs:
 
       - name: Moodle Code Checker
         if: ${{ always() }}
-        run: moodle-plugin-ci codechecker
+        run: moodle-plugin-ci codechecker --max-warnings 0
 
-      # Disabled, it needs real fixes.
-      #- name: Moodle PHPDoc Checker
-      #  if: ${{ always() }}
-      #  run: moodle-plugin-ci phpdoc
+      - name: Moodle PHPDoc Checker
+        if: ${{ always() }}
+        run: moodle-plugin-ci phpdoc
 
       - name: Validating
         if: ${{ always() }}
