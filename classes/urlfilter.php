@@ -30,15 +30,24 @@ require_once($CFG->dirroot.'/filter/urltolink/filter.php');
 /**
  * Lang import controller
  *
- * @package    tool_langimport
+ * @package    local_chatlogs
  * @copyright  2014 Dan Poltawski <dan@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class urlfilter extends \filter_urltolink {
+    /**
+     * Create a new instance
+     */
     public function __construct() {
         self::$globalconfig = new \stdClass();
         self::$globalconfig->embedimages = false;
     }
+
+    /**
+     * Convert all the URLs in a text to working links.
+     *
+     * @param string $text The text which URLs have to be converted to working links. By reference.
+     */
     public function convert_urls_into_links(&$text) {
         parent::convert_urls_into_links($text);
     }

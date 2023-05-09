@@ -25,9 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * admin_setting_configselect for the seleted cohort
- * simply so we can lazy-load the choices.
+ * admin_setting_configselect for the seleted cohort, so we can lazy-load the choices.
  *
+ * @package   local_chatlogs
  * @copyright Dan Poltawski <dan@moodle.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

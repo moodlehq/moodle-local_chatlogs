@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * CLI script to dump a given conversation to standard output.
+ *
  * @package     local_chatlogs
  * @subpackage  cli
  * @copyright   2014 David Mudrak <david@moodle.com>
@@ -108,6 +110,8 @@ exit(0);
  */
 
 /**
+ * Return the formatted header.
+ *
  * @param string $format
  * @return string
  */
@@ -119,6 +123,8 @@ function local_chatlogs_dumpconversation_header($format) {
 }
 
 /**
+ * Return the formatted footer.
+ *
  * @param string $format
  * @return string
  */
@@ -130,6 +136,8 @@ function local_chatlogs_dumpconversation_footer($format) {
 }
 
 /**
+ * Return a formatted message.
+ *
  * @param stdClass $message
  * @param string $format
  * @return string

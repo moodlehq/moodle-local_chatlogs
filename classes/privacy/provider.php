@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines {@link \local_chatlogs\privacy\provider} class.
+ * Defines {@see \local_chatlogs\privacy\provider} class.
  *
  * @package     local_chatlogs
  * @category    privacy

@@ -363,12 +363,15 @@ class local_chatlogs_conversation {
 }
 
 /**
- * Table listing jabber search results
+ * Table listing chat search results
  *
  * @copyright   2012 Dan Poltawski <dan@moodle.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_chatlogs_search_table extends table_sql {
+    /**
+     * @var string Search term used to search the logs.
+     */
     private $searchterm = null;
 
     /**
